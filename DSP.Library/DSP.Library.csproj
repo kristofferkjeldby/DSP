@@ -1,0 +1,91 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{EFF501B1-B5B1-4D19-B4B1-F0625C682726}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>DSP.Library</RootNamespace>
+    <AssemblyName>DSP.Library</AssemblyName>
+    <TargetFrameworkVersion>v4.6.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="NAudio, Version=1.9.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\NAudio.1.9.0\lib\net35\NAudio.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Windows.Forms.DataVisualization" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Aggregators\BufferAggregator.cs" />
+    <Compile Include="Aggregators\MaxAggregator.cs" />
+    <Compile Include="Chain\SingleElement.cs" />
+    <Compile Include="Chain\MixerElement.cs" />
+    <Compile Include="Chain\ChainElement.cs" />
+    <Compile Include="Chain\Echo.cs" />
+    <Compile Include="Chain\Output.cs" />
+    <Compile Include="Chain\Plus.cs" />
+    <Compile Include="Chain\Mixer.cs" />
+    <Compile Include="Chain\Volume.cs" />
+    <Compile Include="Chain\Normalize.cs" />
+    <Compile Include="Config.cs" />
+    <Compile Include="Chain\Tone.cs" />
+    <Compile Include="Chain\Reverse.cs" />
+    <Compile Include="Extensions\Extensions.cs" />
+    <Compile Include="Chain\Input.cs" />
+    <Compile Include="Generators\Control.cs" />
+    <Compile Include="Generators\Generator.cs" />
+    <Compile Include="Generators\Generators.cs" />
+    <Compile Include="Generators\Constant.cs" />
+    <Compile Include="Generators\ChainElementGenerator.cs" />
+    <Compile Include="Generators\Cut.cs" />
+    <Compile Include="Generators\Function.cs" />
+    <Compile Include="Generators\Normalize.cs" />
+    <Compile Include="Generators\Triangle.cs" />
+    <Compile Include="Generators\Scale.cs" />
+    <Compile Include="Generators\Saw.cs" />
+    <Compile Include="Generators\Square.cs" />
+    <Compile Include="Generators\Sine.cs" />
+    <Compile Include="Chain\Spectrum.cs" />
+    <Compile Include="Chain\Waveform.cs" />
+    <Compile Include="Chain\VolumeMeter.cs" />
+    <Compile Include="Model\DeviceInfo.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Services\DeviceService.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
